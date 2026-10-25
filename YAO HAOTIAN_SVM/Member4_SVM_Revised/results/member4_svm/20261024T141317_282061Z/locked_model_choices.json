@@ -1,0 +1,59 @@
+{
+  "Without PageValues": {
+    "kernel": "RBF",
+    "parameters": {
+      "svc__C": 10.0,
+      "svc__gamma": 0.01,
+      "svc__kernel": "rbf"
+    },
+    "native_margin_threshold": 0.3188538306889299,
+    "threshold_source": "training OOF max F1; highest exact-tie threshold",
+    "features": [
+      "Administrative",
+      "Administrative_Duration",
+      "Informational",
+      "Informational_Duration",
+      "ProductRelated",
+      "ProductRelated_Duration",
+      "BounceRates",
+      "ExitRates",
+      "SpecialDay",
+      "Month",
+      "OperatingSystems",
+      "Browser",
+      "Region",
+      "TrafficType",
+      "VisitorType",
+      "Weekend"
+    ]
+  },
+  "With PageValues": {
+    "kernel": "RBF",
+    "parameters": {
+      "svc__C": 100.0,
+      "svc__gamma": 0.001,
+      "svc__kernel": "rbf"
+    },
+    "native_margin_threshold": 0.261889055837365,
+    "threshold_source": "training OOF max F1; highest exact-tie threshold",
+    "features": [
+      "Administrative",
+      "Administrative_Duration",
+      "Informational",
+      "Informational_Duration",
+      "ProductRelated",
+      "ProductRelated_Duration",
+      "BounceRates",
+      "ExitRates",
+      "PageValues",
+      "SpecialDay",
+      "Month",
+      "OperatingSystems",
+      "Browser",
+      "Region",
+      "TrafficType",
+      "VisitorType",
+      "Weekend"
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+Kernel,Best parameters,CV AP mean,CV AP SD,Selected by CV,Specification
+Linear,"{""svc__C"": 0.01, ""svc__kernel"": ""linear""}",0.32490569120501794,0.017020948413591752,False,Without PageValues
+RBF,"{""svc__C"": 10.0, ""svc__gamma"": 0.01, ""svc__kernel"": ""rbf""}",0.3393082167195195,0.03526956501087151,True,Without PageValues
+Linear,"{""svc__C"": 0.1, ""svc__kernel"": ""linear""}",0.6708871352097591,0.029996927623008828,False,With PageValues
+RBF,"{""svc__C"": 100.0, ""svc__gamma"": 0.001, ""svc__kernel"": ""rbf""}",0.6841131325739648,0.028855366263044736,True,With PageValues

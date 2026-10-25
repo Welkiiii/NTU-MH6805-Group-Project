@@ -1,0 +1,255 @@
+{
+  "status": "complete",
+  "run_id": "20261024T141317_282061Z",
+  "seed": 6805,
+  "cv": "non-nested stratified five-fold",
+  "parallel_backend": "threading",
+  "n_jobs": 4,
+  "scoring": "average_precision",
+  "cv_sd_ddof": 0,
+  "calibration": {
+    "method": "sigmoid",
+    "folds": 5,
+    "ensemble": true
+  },
+  "probability_scenarios": [
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6
+  ],
+  "threshold_rule": "training OOF native-margin max F1; highest exact-tie threshold",
+  "versions": {
+    "python": "3.13.15",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.6.1",
+    "matplotlib": "3.10.8",
+    "joblib": "1.5.3"
+  },
+  "input_files": [
+    {
+      "dataset": "Training",
+      "filename": "online_shoppers_train_fixed.csv",
+      "sha256": "f22e619801403164cbf67f878db6f7a44a0ae1490aa1988452609a934bc2ed85",
+      "matches_group_reference": true
+    },
+    {
+      "dataset": "Test",
+      "filename": "online_shoppers_test_fixed.csv",
+      "sha256": "4991664b2bbff1a2c20b64dcc8da1c8e594509be63eb1c72617ba8855bc03519",
+      "matches_group_reference": true
+    }
+  ],
+  "model_choices": {
+    "Without PageValues": {
+      "kernel": "RBF",
+      "parameters": {
+        "svc__C": 10.0,
+        "svc__gamma": 0.01,
+        "svc__kernel": "rbf"
+      },
+      "native_margin_threshold": 0.3188538306889299,
+      "threshold_source": "training OOF max F1; highest exact-tie threshold",
+      "features": [
+        "Administrative",
+        "Administrative_Duration",
+        "Informational",
+        "Informational_Duration",
+        "ProductRelated",
+        "ProductRelated_Duration",
+        "BounceRates",
+        "ExitRates",
+        "SpecialDay",
+        "Month",
+        "OperatingSystems",
+        "Browser",
+        "Region",
+        "TrafficType",
+        "VisitorType",
+        "Weekend"
+      ]
+    },
+    "With PageValues": {
+      "kernel": "RBF",
+      "parameters": {
+        "svc__C": 100.0,
+        "svc__gamma": 0.001,
+        "svc__kernel": "rbf"
+      },
+      "native_margin_threshold": 0.261889055837365,
+      "threshold_source": "training OOF max F1; highest exact-tie threshold",
+      "features": [
+        "Administrative",
+        "Administrative_Duration",
+        "Informational",
+        "Informational_Duration",
+        "ProductRelated",
+        "ProductRelated_Duration",
+        "BounceRates",
+        "ExitRates",
+        "PageValues",
+        "SpecialDay",
+        "Month",
+        "OperatingSystems",
+        "Browser",
+        "Region",
+        "TrafficType",
+        "VisitorType",
+        "Weekend"
+      ]
+    }
+  },
+  "files": [
+    {
+      "filename": "computed_summary.md",
+      "sha256": "b3d7656c85462e88e1edeaa08495a3b7591b8cbf6727afb2af6ef607fcfa7271"
+    },
+    {
+      "filename": "data_audit.csv",
+      "sha256": "a2fbcc0a5c847d87ba1373e04a0cec54c8288ab92f0029340b84843b95fcd358"
+    },
+    {
+      "filename": "data_sha256.csv",
+      "sha256": "70c6b60ac06947824cabb2cee001255962c10aa2a506498672f43e8646cc8b94"
+    },
+    {
+      "filename": "environment.json",
+      "sha256": "3e9617017a570ad663106e117ae52fb8741c796e511a9fcc5b7898d7ef4714e1"
+    },
+    {
+      "filename": "locked_model_choices.json",
+      "sha256": "85ffc910e51fe90b1d0325e2b39c916cb1f47c32df4da10aad10ef25af00f82a"
+    },
+    {
+      "filename": "month_holdout_with_month_linear_grid.csv",
+      "sha256": "4a784fb4e365baa97e5d197e96ea994d14ec92664c6a38bbf35494f413410401"
+    },
+    {
+      "filename": "month_holdout_with_month_rbf_grid.csv",
+      "sha256": "40abff56cd6bf58dac4ca90eef1321f06298dd0e8d3985f5218c9008092dd80a"
+    },
+    {
+      "filename": "month_holdout_without_month_linear_grid.csv",
+      "sha256": "f2a57c97588a0e9f10548f3f98f52b8321cd326ed2155d22c2598425c4def1b9"
+    },
+    {
+      "filename": "month_holdout_without_month_rbf_grid.csv",
+      "sha256": "0e4768b4392af26e44ed941783665acdf09ffa1e5cafe9227a9a9587faef09eb"
+    },
+    {
+      "filename": "run_status.json",
+      "sha256": "bc07cf46f6c9ab426620fd820630755c4f2e55981a3879a510c7f305c292b1f8"
+    },
+    {
+      "filename": "shared_cv_folds_seed6805.csv",
+      "sha256": "6460718a502770828034779a0d5a7bbf9d4d42b70a7c6a97e996661bb63df361"
+    },
+    {
+      "filename": "svm_calibration_and_training_threshold.png",
+      "sha256": "c65a6c46310f897a171cae430e91842d51a87a4a54bcacddd765ab6a0d75fa90"
+    },
+    {
+      "filename": "svm_calibration_results.csv",
+      "sha256": "0e5adbd91a2217623502243c7d8384ff3941be15864b51f898c82c01b1e3b716"
+    },
+    {
+      "filename": "svm_cv_model_selection.csv",
+      "sha256": "d5d4d329091a8526724608be0e5e7891a0494020c4f47654fc72dd0af306c157"
+    },
+    {
+      "filename": "svm_default_margin_test_results.csv",
+      "sha256": "691e83b88214bbce85a9f570eb112e9258b1017ac9071e7690e57bc27f36f00b"
+    },
+    {
+      "filename": "svm_linear_coefficients.csv",
+      "sha256": "51aa6bfbeb6ef8065200894268caf35c448ac1b5b2b5d01e62352b203d1427b2"
+    },
+    {
+      "filename": "svm_linear_coefficients.png",
+      "sha256": "3ed9b027379133e16a308ee7fecc86f8e605f96f56367d8612a3b446bb023aac"
+    },
+    {
+      "filename": "svm_main_confusion_matrices.png",
+      "sha256": "2f4f48083de5e55016fe5b43d4cc22bc6bbafcf61bdfae953a33c800a3be82c2"
+    },
+    {
+      "filename": "svm_main_ranking.png",
+      "sha256": "96ca40cac23dab00ecd273767f5ee2c08d881d8807ca1ecf3cc333323d708211"
+    },
+    {
+      "filename": "svm_month_holdout_assignments.csv",
+      "sha256": "7f6e30a8dc75cc6de9043edb6c72c406c493cd579c52c0ee2f59e409f8f01bd2"
+    },
+    {
+      "filename": "svm_month_holdout_comparison.png",
+      "sha256": "5210b05fc287fa3ed172fc0017f8d202209b50c3c40adbe78bd00ff23aa3f04b"
+    },
+    {
+      "filename": "svm_month_holdout_with_month.csv",
+      "sha256": "0172d420cae33084f1079a2e6e1c9e8e65fb34e40b27b1153e39d5aaf8feff9b"
+    },
+    {
+      "filename": "svm_month_holdout_without_month.csv",
+      "sha256": "33d30cb0f30e83cdbe3c965d9b4c08149a8a16659ab9d8496afc9d68f2c199b6"
+    },
+    {
+      "filename": "svm_month_sample_audit.csv",
+      "sha256": "1bdbff4cb5f8cd5df0eef451945395fc5610c26a47572d9f9886c6cd7e12621f"
+    },
+    {
+      "filename": "svm_month_unknown_categories.csv",
+      "sha256": "9849855417ea8cc5ecadf4dd78ed48e3679df5eb0b7506716d0729b02e1b99a4"
+    },
+    {
+      "filename": "svm_oof_margin_threshold.csv",
+      "sha256": "94a3a8606a941621189b98a574c506b7dfc33799a69b88910613e5e3588ba0e0"
+    },
+    {
+      "filename": "svm_pagevalues_sensitivity.png",
+      "sha256": "862b9ad7be7196561df606cd5c96ac419d92f9ae5baa8648d7f6312ac98e51d0"
+    },
+    {
+      "filename": "svm_probability_threshold_scenarios.csv",
+      "sha256": "bb8f0d275fd9eec873322d439df9dee4141f22f0e44e6746cc298d82367a277c"
+    },
+    {
+      "filename": "svm_reference_baselines.csv",
+      "sha256": "b4d8c4cb5de19cdebedcd1dfd1d6768d09239f81d19b10aa87effbf416311898"
+    },
+    {
+      "filename": "svm_test_scores.csv",
+      "sha256": "816d5ce78b1f1c604dea874c6fdd79d642f755908178c295e38e1f36c6c15840"
+    },
+    {
+      "filename": "svm_training_oof_margins.csv",
+      "sha256": "f2f0180f1ae6f4f75c0b682bc3971a76f24cb6b1ac11ade5a156cd3ab3cee380"
+    },
+    {
+      "filename": "with_pagevalues_linear_grid.csv",
+      "sha256": "648fa323b8525f80f4d40c89135213dcb978777f0630b825decf7856060d5297"
+    },
+    {
+      "filename": "with_pagevalues_rbf_grid.csv",
+      "sha256": "977bdccdc0f96d53498e5217e6ead24da1b4bc13eb858facc129e6e9bdea481c"
+    },
+    {
+      "filename": "with_pagevalues_training_threshold_curve.csv",
+      "sha256": "70123d39c45601429a9de934afab17932a345cc404094df6b834b4600d5b6e9c"
+    },
+    {
+      "filename": "without_pagevalues_linear_grid.csv",
+      "sha256": "d9b35df1ad51f96c354da465b8d9861ad0954d253f976a30b4c4b7e84fda1a3f"
+    },
+    {
+      "filename": "without_pagevalues_rbf_grid.csv",
+      "sha256": "47cd0695c9d9991b2ddffca11f8118fc47708499b5c7c5d7ca650c9ad78968e8"
+    },
+    {
+      "filename": "without_pagevalues_training_threshold_curve.csv",
+      "sha256": "44008eb3b67b414e9c48af5c2af8e982f014de6185b27e7d6ab8ea8a768068ee"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "seed": 6805,
+  "data_policy": "Both models exclude PageValues because it may leak near-conversion information.",
+  "feature_engineering": {
+    "winsorisation": "1st/99th percentile bounds are fitted within each training fold only.",
+    "new_numeric_features": [
+      "TotalPages",
+      "TotalDuration",
+      "ProductPageShare",
+      "ProductDurationShare",
+      "AvgProductDuration",
+      "AvgAdministrativeDuration",
+      "AvgInformationalDuration",
+      "ExitMinusBounce",
+      "ExitBounceRatio"
+    ],
+    "new_categorical_features": [
+      "MonthWeekend",
+      "HasAdministrative",
+      "HasInformational"
+    ]
+  },
+  "original_lr": {
+    "best_params": {
+      "model__C": 0.01
+    },
+    "cv_pr_auc": 0.3397615825830759,
+    "oof_f1": 0.4013322231473772,
+    "test": {
+      "threshold": 0.557,
+      "roc_auc": 0.7564,
+      "pr_auc": 0.3351,
+      "precision": 0.2989,
+      "recall": 0.6361,
+      "f1": 0.4067,
+      "balanced_accuracy": 0.6796,
+      "tn": 1489,
+      "fp": 570,
+      "fn": 139,
+      "tp": 243
+    }
+  },
+  "engineered_lr": {
+    "best_params": {
+      "model__C": 0.1,
+      "model__penalty": "l1"
+    },
+    "cv_pr_auc": 0.34235112529394285,
+    "oof_f1": 0.40117064385411977,
+    "test": {
+      "threshold": 0.587,
+      "roc_auc": 0.7615,
+      "pr_auc": 0.3426,
+      "precision": 0.3081,
+      "recall": 0.5864,
+      "f1": 0.404,
+      "balanced_accuracy": 0.671,
+      "tn": 1556,
+      "fp": 503,
+      "fn": 158,
+      "tp": 224
+    }
+  }
+}

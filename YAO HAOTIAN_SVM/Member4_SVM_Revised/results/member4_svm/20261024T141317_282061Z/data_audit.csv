@@ -1,0 +1,3 @@
+Dataset,Rows,Columns,Positives,Purchase rate,Missing cells,Duplicate rows
+Training,9764,18,1526,0.15628840639082342,0,0
+Test,2441,18,382,0.15649324047521507,0,0

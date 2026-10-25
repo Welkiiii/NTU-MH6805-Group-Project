@@ -1,0 +1,2 @@
+Selection metric,Threshold,Prediction rule
+Pooled OOF F1,0.19365380794421289,score >= threshold

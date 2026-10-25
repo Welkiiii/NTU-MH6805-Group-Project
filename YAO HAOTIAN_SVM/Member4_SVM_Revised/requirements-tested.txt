@@ -1,0 +1,9 @@
+# Numerical environment used to execute the delivered notebook.
+# Python 3.13.15; Jupyter front-end can be installed separately.
+numpy==2.3.5
+pandas==2.2.3
+scipy==1.17.0
+scikit-learn==1.6.1
+matplotlib==3.10.8
+joblib==1.5.3
+ipykernel==7.4.0

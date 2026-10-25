@@ -1,0 +1,440 @@
+{
+  "seed": 6805,
+  "data_quality": {
+    "raw_train_rows": 9764,
+    "raw_test_rows": 2441,
+    "training_rows_after_within_train_deduplication": 9764,
+    "duplicate_rows_in_raw_train": 0,
+    "duplicate_rows_in_heldout_test": 0,
+    "duplicate_rows_in_combined_supplied_files": 0,
+    "missing_cells_train": 0,
+    "missing_cells_test": 0,
+    "negative_numeric_counts_train": {
+      "Administrative": 0,
+      "Administrative_Duration": 0,
+      "Informational": 0,
+      "Informational_Duration": 0,
+      "ProductRelated": 0,
+      "ProductRelated_Duration": 0,
+      "BounceRates": 0,
+      "ExitRates": 0,
+      "PageValues": 0,
+      "SpecialDay": 0
+    },
+    "categorical_features": [
+      "Month",
+      "OperatingSystems",
+      "Browser",
+      "Region",
+      "TrafficType",
+      "VisitorType",
+      "Weekend"
+    ],
+    "numeric_features_main_specification": [
+      "Administrative",
+      "Administrative_Duration",
+      "Informational",
+      "Informational_Duration",
+      "ProductRelated",
+      "ProductRelated_Duration",
+      "BounceRates",
+      "ExitRates",
+      "SpecialDay"
+    ]
+  },
+  "eda": {
+    "train_positive_rate": 0.15628840639082342,
+    "train_class_counts": {
+      "0": 8238,
+      "1": 1526
+    },
+    "pagevalues_zero_share": 0.7787791888570258,
+    "purchase_rate_pagevalues_zero": 0.04050499736980537,
+    "purchase_rate_pagevalues_positive": 0.5638888888888889
+  },
+  "vif_top": [
+    {
+      "feature": "ExitRates",
+      "vif": 5.9467
+    },
+    {
+      "feature": "BounceRates",
+      "vif": 5.4905
+    },
+    {
+      "feature": "ProductRelated",
+      "vif": 4.4165
+    },
+    {
+      "feature": "ProductRelated_Duration",
+      "vif": 4.3612
+    },
+    {
+      "feature": "Administrative",
+      "vif": 1.9336
+    },
+    {
+      "feature": "Informational",
+      "vif": 1.7876
+    },
+    {
+      "feature": "Administrative_Duration",
+      "vif": 1.7047
+    },
+    {
+      "feature": "Informational_Duration",
+      "vif": 1.6531
+    },
+    {
+      "feature": "SpecialDay",
+      "vif": 1.0247
+    }
+  ],
+  "main_excluding_pagevalues": {
+    "name": "exclude_pagevalues",
+    "include_pagevalues": false,
+    "log_transform": true,
+    "best_C": 0.01,
+    "best_cv_pr_auc": 0.3401379815104967,
+    "cv_table": [
+      {
+        "C": 0.01,
+        "CV PR AUC mean": 0.3401379815104967,
+        "CV PR AUC sd": 0.019834904799880385,
+        "CV ROC AUC mean": 0.7513742604336752,
+        "CV F1 mean": 0.3930263480876193,
+        "CV recall mean": 0.756215579127826,
+        "rank": 1
+      },
+      {
+        "C": 0.1,
+        "CV PR AUC mean": 0.3379891127006672,
+        "CV PR AUC sd": 0.023209733783315707,
+        "CV ROC AUC mean": 0.7531649275947825,
+        "CV F1 mean": 0.3963689892524165,
+        "CV recall mean": 0.7437779920711454,
+        "rank": 2
+      },
+      {
+        "C": 1.0,
+        "CV PR AUC mean": 0.3357302370282377,
+        "CV PR AUC sd": 0.024839841761905092,
+        "CV ROC AUC mean": 0.752247505248276,
+        "CV F1 mean": 0.39420861264142915,
+        "CV recall mean": 0.739185685203043,
+        "rank": 3
+      },
+      {
+        "C": 10.0,
+        "CV PR AUC mean": 0.3346886116066301,
+        "CV PR AUC sd": 0.024441688704543357,
+        "CV ROC AUC mean": 0.7513035947747472,
+        "CV F1 mean": 0.3944335460673926,
+        "CV recall mean": 0.7398414229079611,
+        "rank": 4
+      },
+      {
+        "C": 100.0,
+        "CV PR AUC mean": 0.33455482515451795,
+        "CV PR AUC sd": 0.024452575954294342,
+        "CV ROC AUC mean": 0.7509119970812514,
+        "CV F1 mean": 0.39443650086199,
+        "CV recall mean": 0.7398414229079611,
+        "rank": 5
+      }
+    ],
+    "threshold_from_oof_f1": 0.5484515482626051,
+    "test_default_threshold": {
+      "threshold": 0.5,
+      "roc_auc": 0.7565610307448591,
+      "pr_auc": 0.3354329659412846,
+      "precision": 0.27367424242424243,
+      "recall": 0.756544502617801,
+      "f1": 0.4019471488178025,
+      "balanced_accuracy": 0.6920167874915135,
+      "tn": 1292,
+      "fp": 767,
+      "fn": 93,
+      "tp": 289
+    },
+    "test_cv_selected_threshold": {
+      "threshold": 0.5484515482626051,
+      "roc_auc": 0.7565610307448591,
+      "pr_auc": 0.3354329659412846,
+      "precision": 0.2952941176470588,
+      "recall": 0.6570680628272252,
+      "f1": 0.4074675324675325,
+      "balanced_accuracy": 0.6830750707530977,
+      "tn": 1460,
+      "fp": 599,
+      "fn": 131,
+      "tp": 251
+    }
+  },
+  "sensitivity_including_pagevalues": {
+    "name": "include_pagevalues",
+    "include_pagevalues": true,
+    "log_transform": true,
+    "best_C": 0.1,
+    "best_cv_pr_auc": 0.6612529077859503,
+    "cv_table": [
+      {
+        "C": 0.1,
+        "CV PR AUC mean": 0.6612529077859503,
+        "CV PR AUC sd": 0.03143141589144634,
+        "CV ROC AUC mean": 0.9045178292470931,
+        "CV F1 mean": 0.6117128702366822,
+        "CV recall mean": 0.7798457087753133,
+        "rank": 1
+      },
+      {
+        "C": 1.0,
+        "CV PR AUC mean": 0.6601438245807401,
+        "CV PR AUC sd": 0.032950656048402874,
+        "CV ROC AUC mean": 0.9035280439329864,
+        "CV F1 mean": 0.6102023203833442,
+        "CV recall mean": 0.7818022072216865,
+        "rank": 2
+      },
+      {
+        "C": 10.0,
+        "CV PR AUC mean": 0.6591204970158977,
+        "CV PR AUC sd": 0.033409032268648636,
+        "CV ROC AUC mean": 0.902309462865086,
+        "CV F1 mean": 0.6089325480392841,
+        "CV recall mean": 0.7818043501553626,
+        "rank": 3
+      },
+      {
+        "C": 100.0,
+        "CV PR AUC mean": 0.6585325713605317,
+        "CV PR AUC sd": 0.033475103965582884,
+        "CV ROC AUC mean": 0.9016458573277818,
+        "CV F1 mean": 0.6087287599788669,
+        "CV recall mean": 0.7811486124504446,
+        "rank": 4
+      },
+      {
+        "C": 0.01,
+        "CV PR AUC mean": 0.65641974953596,
+        "CV PR AUC sd": 0.029415538634447336,
+        "CV ROC AUC mean": 0.9008675173357703,
+        "CV F1 mean": 0.611657645894074,
+        "CV recall mean": 0.7746040930033216,
+        "rank": 5
+      }
+    ],
+    "threshold_from_oof_f1": 0.6358958631931299,
+    "test_default_threshold": {
+      "threshold": 0.5,
+      "roc_auc": 0.8998726062822139,
+      "pr_auc": 0.6221420238738855,
+      "precision": 0.49834983498349833,
+      "recall": 0.7905759162303665,
+      "f1": 0.611336032388664,
+      "balanced_accuracy": 0.8214657143075097,
+      "tn": 1755,
+      "fp": 304,
+      "fn": 80,
+      "tp": 302
+    },
+    "test_cv_selected_threshold": {
+      "threshold": 0.6358958631931299,
+      "roc_auc": 0.8998726062822139,
+      "pr_auc": 0.6221420238738855,
+      "precision": 0.6098130841121495,
+      "recall": 0.6832460732984293,
+      "f1": 0.6444444444444445,
+      "balanced_accuracy": 0.8010693698206571,
+      "tn": 1892,
+      "fp": 167,
+      "fn": 121,
+      "tp": 261
+    }
+  },
+  "sensitivity_raw_numeric": {
+    "name": "exclude_pagevalues_raw_numeric",
+    "include_pagevalues": false,
+    "log_transform": false,
+    "best_C": 0.1,
+    "best_cv_pr_auc": 0.33207298218379566,
+    "cv_table": [
+      {
+        "C": 0.1,
+        "CV PR AUC mean": 0.33207298218379566,
+        "CV PR AUC sd": 0.022275385198350907,
+        "CV ROC AUC mean": 0.7487823589154342,
+        "CV F1 mean": 0.38998248531219765,
+        "CV recall mean": 0.7300075002678666,
+        "rank": 1
+      },
+      {
+        "C": 0.01,
+        "CV PR AUC mean": 0.3316648186757491,
+        "CV PR AUC sd": 0.018836878968732422,
+        "CV ROC AUC mean": 0.7481526300067509,
+        "CV F1 mean": 0.39048085432450785,
+        "CV recall mean": 0.7437651344690882,
+        "rank": 2
+      },
+      {
+        "C": 100.0,
+        "CV PR AUC mean": 0.330323807185362,
+        "CV PR AUC sd": 0.02279500274298682,
+        "CV ROC AUC mean": 0.7465070145092005,
+        "CV F1 mean": 0.39079903072016287,
+        "CV recall mean": 0.7293603342976536,
+        "rank": 3
+      },
+      {
+        "C": 1.0,
+        "CV PR AUC mean": 0.32972516509737704,
+        "CV PR AUC sd": 0.02259108531437795,
+        "CV ROC AUC mean": 0.7478410319698245,
+        "CV F1 mean": 0.3907462905717381,
+        "CV recall mean": 0.7273931211828994,
+        "rank": 4
+      },
+      {
+        "C": 10.0,
+        "CV PR AUC mean": 0.329108492526306,
+        "CV PR AUC sd": 0.022674768876506494,
+        "CV ROC AUC mean": 0.7468482536150062,
+        "CV F1 mean": 0.3910759984219586,
+        "CV recall mean": 0.7293603342976536,
+        "rank": 5
+      }
+    ],
+    "threshold_from_oof_f1": 0.5813081415339918,
+    "test_default_threshold": {
+      "threshold": 0.5,
+      "roc_auc": 0.7521670917361907,
+      "pr_auc": 0.32715020507685494,
+      "precision": 0.28019323671497587,
+      "recall": 0.7591623036649214,
+      "f1": 0.40931545518701484,
+      "balanced_accuracy": 0.6986680872379973,
+      "tn": 1314,
+      "fp": 745,
+      "fn": 92,
+      "tp": 290
+    },
+    "test_cv_selected_threshold": {
+      "threshold": 0.5813081415339918,
+      "roc_auc": 0.7521670917361907,
+      "pr_auc": 0.32715020507685494,
+      "precision": 0.2983425414364641,
+      "recall": 0.5654450261780105,
+      "f1": 0.39059674502712477,
+      "balanced_accuracy": 0.6593616583051296,
+      "tn": 1551,
+      "fp": 508,
+      "fn": 166,
+      "tp": 216
+    }
+  },
+  "main_top_positive_coefficients": [
+    {
+      "feature": "Month_Nov",
+      "coefficient": 0.46316,
+      "odds_ratio": 1.58909
+    },
+    {
+      "feature": "ProductRelated_Duration",
+      "coefficient": 0.37615,
+      "odds_ratio": 1.45666
+    },
+    {
+      "feature": "Month_Oct",
+      "coefficient": 0.18957,
+      "odds_ratio": 1.20873
+    },
+    {
+      "feature": "TrafficType_20",
+      "coefficient": 0.1828,
+      "odds_ratio": 1.20058
+    },
+    {
+      "feature": "Administrative_Duration",
+      "coefficient": 0.14624,
+      "odds_ratio": 1.15747
+    },
+    {
+      "feature": "TrafficType_8",
+      "coefficient": 0.13112,
+      "odds_ratio": 1.1401
+    },
+    {
+      "feature": "VisitorType_New_Visitor",
+      "coefficient": 0.10953,
+      "odds_ratio": 1.11575
+    },
+    {
+      "feature": "TrafficType_11",
+      "coefficient": 0.0958,
+      "odds_ratio": 1.10054
+    },
+    {
+      "feature": "OperatingSystems_2",
+      "coefficient": 0.0922,
+      "odds_ratio": 1.09659
+    },
+    {
+      "feature": "TrafficType_2",
+      "coefficient": 0.08855,
+      "odds_ratio": 1.09259
+    }
+  ],
+  "main_top_negative_coefficients": [
+    {
+      "feature": "ExitRates",
+      "coefficient": -0.77409,
+      "odds_ratio": 0.46112
+    },
+    {
+      "feature": "Month_Mar",
+      "coefficient": -0.32424,
+      "odds_ratio": 0.72308
+    },
+    {
+      "feature": "TrafficType_13",
+      "coefficient": -0.28569,
+      "odds_ratio": 0.7515
+    },
+    {
+      "feature": "Month_Dec",
+      "coefficient": -0.26809,
+      "odds_ratio": 0.76484
+    },
+    {
+      "feature": "TrafficType_3",
+      "coefficient": -0.26093,
+      "odds_ratio": 0.77034
+    },
+    {
+      "feature": "VisitorType_Returning_Visitor",
+      "coefficient": -0.25395,
+      "odds_ratio": 0.77573
+    },
+    {
+      "feature": "OperatingSystems_3",
+      "coefficient": -0.23796,
+      "odds_ratio": 0.78823
+    },
+    {
+      "feature": "Month_May",
+      "coefficient": -0.16691,
+      "odds_ratio": 0.84627
+    },
+    {
+      "feature": "TrafficType_1",
+      "coefficient": -0.1534,
+      "odds_ratio": 0.85779
+    },
+    {
+      "feature": "Month_Feb",
+      "coefficient": -0.15291,
+      "odds_ratio": 0.8582
+    }
+  ]
+}

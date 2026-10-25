@@ -1,0 +1,71 @@
+{
+  "status": "complete",
+  "stages": [
+    {
+      "stage": "without_pagevalues: Linear grid search",
+      "status": "complete",
+      "seconds": 85.692
+    },
+    {
+      "stage": "without_pagevalues: RBF grid search",
+      "status": "complete",
+      "seconds": 294.021
+    },
+    {
+      "stage": "with_pagevalues: Linear grid search",
+      "status": "complete",
+      "seconds": 51.575
+    },
+    {
+      "stage": "with_pagevalues: RBF grid search",
+      "status": "complete",
+      "seconds": 214.756
+    },
+    {
+      "stage": "without_pagevalues: training OOF margins",
+      "status": "complete",
+      "seconds": 9.971
+    },
+    {
+      "stage": "with_pagevalues: training OOF margins",
+      "status": "complete",
+      "seconds": 6.243
+    },
+    {
+      "stage": "without_pagevalues: five-fold sigmoid calibration",
+      "status": "complete",
+      "seconds": 9.925
+    },
+    {
+      "stage": "with_pagevalues: five-fold sigmoid calibration",
+      "status": "complete",
+      "seconds": 6.098
+    },
+    {
+      "stage": "month_holdout_with_month: Linear grid search",
+      "status": "complete",
+      "seconds": 25.674
+    },
+    {
+      "stage": "month_holdout_with_month: RBF grid search",
+      "status": "complete",
+      "seconds": 121.345
+    },
+    {
+      "stage": "month_holdout_without_month: Linear grid search",
+      "status": "complete",
+      "seconds": 30.986
+    },
+    {
+      "stage": "month_holdout_without_month: RBF grid search",
+      "status": "complete",
+      "seconds": 101.087
+    },
+    {
+      "stage": "Fixed-test native margin evaluation; choices frozen",
+      "status": "complete",
+      "seconds": 4.033
+    }
+  ],
+  "total_seconds": 971.785
+}
